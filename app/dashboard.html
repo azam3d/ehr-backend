@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electronic Health Record</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <style>
+      #sidebar {
+        position: fixed;
+        top: 56px; /* Height of topbar */
+        left: 0;
+        height: 100%;
+        width: 250px;
+        background-color: #343a40;
+        color: white;
+        padding-top: 1rem;
+        transition: transform 0.3s ease;
+        z-index: 1020;
+      }
+
+      /* Sidebar hidden on smaller screens */
+      #sidebar.hide-sidebar {
+        transform: translateX(-250px);
+      }
+
+      /* Sidebar links */
+      #sidebar a {
+        color: white;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        padding: 0.75rem 1rem;
+      }
+
+      #sidebar a i {
+        margin-right: 10px;
+        width: 20px;
+        text-align: center;
+      }
+
+      #sidebar a:hover {
+        background-color: #495057;
+      }
+
+      /* Content styling */
+      #content {
+        margin-left: 250px;
+        padding: 1rem;
+        transition: margin-left 0.3s ease;
+        width: auto;
+        position: relative;
+        min-height: calc(100vh - 56px);
+      }
+
+      /* Main content adjustment on small screens */
+      #content.full-width {
+        margin-left: 0;
+      }
+
+      /* Fixed topbar styling */
+      #topbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        z-index: 1030;
+      }
+
+      /* Prevent main content from hiding under the fixed topbar */
+      body {
+        padding-top: 56px;
+        margin: 0;
+        min-height: 100vh;
+      }
+
+      /* Make container fluid */
+      #content .container {
+        max-width: 100%;
+        padding-right: 1rem;
+        padding-left: 1rem;
+        margin-right: auto;
+        margin-left: auto;
+      }
+
+      /* Sidebar and content adjustments on small screens */
+      @media (max-width: 992px) {
+        #sidebar {
+          transform: translateX(-250px);
+        }
+
+        #content {
+          margin-left: 0;
+          width: 100%;
+        }
+
+        #sidebar.show-sidebar {
+          transform: translateX(0);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Topbar -->
+    <nav id="topbar" class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <button class="btn btn-dark d-lg-none" id="toggleSidebar" aria-label="Toggle sidebar">☰</button>
+
+        <a class="navbar-brand ms-3" href="#">My Website</a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Sidebar -->
+    <div id="sidebar">
+      <a href="#"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+      <a href="#"><i class="fas fa-user"></i> Profile</a>
+      <a href="#"><i class="fas fa-cog"></i> Settings</a>
+      <a href="#"><i class="fas fa-sign-out-alt"></i> Logout</a>
+    </div>
+
+    <!-- Main Content -->
+    <div id="content">
+      <div class="container">
+        <h1>Main Content Area</h1>
+        <p>This is the main content area. The sidebar is initially visible but can be toggled using the button on the top left for smaller screens.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nec risus et urna suscipit placerat.</p>
+        <p>Scroll to see how the layout adjusts for different screen sizes.</p>
+
+        <h1>Main Content Area</h1>
+        <p>This is where the main content will go. The sidebar is fixed on the left, and the topbar is fixed at the top of the page.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nec risus et urna suscipit placerat.</p>
+        <p>Scroll to see how the layout stays fixed while the content moves.</p>
+
+        <h1>Main Content Area</h1>
+        <p>This is where the main content will go. The sidebar is fixed on the left, and the topbar is fixed at the top of the page.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nec risus et urna suscipit placerat.</p>
+        <p>Scroll to see how the layout stays fixed while the content moves.</p>
+
+        <h1>Main Content Area</h1>
+        <p>This is where the main content will go. The sidebar is fixed on the left, and the topbar is fixed at the top of the page.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nec risus et urna suscipit placerat.</p>
+        <p>Scroll to see how the layout stays fixed while the content moves.</p>
+
+        <h1>Main Content Area</h1>
+        <p>This is where the main content will go. The sidebar is fixed on the left, and the topbar is fixed at the top of the page.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nec risus et urna suscipit placerat.</p>
+        <p>Scroll to see how the layout stays fixed while the content moves.</p>
+
+        <h1>Main Content Area</h1>
+        <p>This is where the main content will go. The sidebar is fixed on the left, and the topbar is fixed at the top of the page.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nec risus et urna suscipit placerat.</p>
+        <p>Scroll to see how the layout stays fixed while the content moves.</p>
+
+        <h1>Main Content Area</h1>
+        <p>This is where the main content will go. The sidebar is fixed on the left, and the topbar is fixed at the top of the page.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nec risus et urna suscipit placerat.</p>
+        <p>Scroll to see how the layout stays fixed while the content moves.</p>
+
+        <h1>Main Content Area</h1>
+        <p>This is where the main content will go. The sidebar is fixed on the left, and the topbar is fixed at the top of the page.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nec risus et urna suscipit placerat.</p>
+        <p>Scroll to see how the layout stays fixed while the content moves.</p>
+
+        <h1>Main Content Area</h1>
+        <p>This is where the main content will go. The sidebar is fixed on the left, and the topbar is fixed at the top of the page.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nec risus et urna suscipit placerat.</p>
+        <p>Scroll to see how the layout stays fixed while the content moves.</p>
+      </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      // Toggle sidebar visibility on small screens
+      document.getElementById('toggleSidebar').addEventListener('click', function () {
+        document.getElementById('sidebar').classList.toggle('show-sidebar');
+        document.getElementById('content').classList.toggle('full-width');
+      });
+    </script>
+  </body>
+</html>

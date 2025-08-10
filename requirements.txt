@@ -1,0 +1,14 @@
+config
+Flask
+flask_cors
+Flask-RESTful
+Flask-JWT-Extended
+Flask-Migrate
+Flask-SQLAlchemy
+flask-login
+Flask-Limiter
+pymysql
+python-dotenv
+python-slugify
+requests
+uwsgi
