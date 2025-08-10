@@ -282,14 +282,6 @@ class ForgotPassword(Resource):
             }, current_app.config['SECRET_KEY'])
         
             url = request.host_url + 'reset_password/'
-            requests.post("https://api.mailgun.net/v3/sandbox005ed7c08fac4cc586a3957fcd787feb.mailgun.org/messages",
-                auth=("api", "b83b2017b86c990915dae774ccd221e8-29b7488f-128af1b4"),
-                data={"from": "Property <admin@property.com>",
-                    "to": ["swooshfx@gmail.com"],
-                    "subject": "Reset Your Password",
-                    "text": render_template('reset_password.html', url=url + reset_token),
-                    "html": render_template('reset_password.html', url=url + reset_token)
-                    })
 
         return {'message': 'Email sent'}, 201
 
@@ -327,14 +319,6 @@ class ResetPassword(Resource):
                 except SQLAlchemyError as e:
                     return { "message": f"An error occured inserting user: {str(e)}" }, 500
                 
-                # requests.post("https://api.mailgun.net/v3/sandbox005ed7c08fac4cc586a3957fcd787feb.mailgun.org/messages",
-                #     auth=("api", "b83b2017b86c990915dae774ccd221e8-29b7488f-128af1b4"),
-                #     data={"from": "Property <admin@property.com>",
-                #         "to": ["swooshfx@gmail.com"],
-                #         "subject": "Password Reset Successful",
-                #         "text": 'Password reset was successful',
-                #         "html": '<p>Password reset was successful</p>'
-                #         })
         except jwt.ExpiredSignatureError:
             return {'message': 'Token is invalid'}, 401
 
