@@ -1,3 +1,5 @@
+
+
 Stage 1: Supercharged Clinician
 
 I am using Python 3.12 and Flask library
@@ -12,4 +14,4 @@ python3 -m venv ./venv && source venv/bin/activate
 2. Install packages
 pip3 install -r requirements.txt
 
-3. flask run
+3. python run.py
